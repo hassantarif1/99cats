@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   # reset the current_session_token
   def login_user!(user)
     # force other clients to log out by regenerating a new session token
-    # user.reset_session_token!
+    user.reset_session_token!
     # log in this client
     @current_user = user
     session[:session_token] = user.session_token

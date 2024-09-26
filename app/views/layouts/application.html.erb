@@ -16,8 +16,8 @@
     </header>
     <div class="nav-login">
     <% if current_user.nil? %>
-      <a href="<%= signin_path %>">Sign In</a>
-      <a href="<%= signup_path %>">Sign Up</a>
+      <%= sign_in_user %>
+      <%= sign_up_user %>
     <% else %>
     </div>
     <div>
@@ -26,7 +26,6 @@
       <form action="<%= session_path(current_user) %>" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="_method" value="DELETE">
-
         <input class="button_logout" type="submit" value="logout">
       </form>
     <% end %>

@@ -47,6 +47,8 @@ gem 'bootsnap', require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
+# for letter opener
+gem "letter_opener", group: :development
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -70,9 +72,14 @@ group :development do
   # gem "spring"
 end
 
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+end
+
+group :production do 
+  gem 'bcrypt', '~> 3.1.7'
 end

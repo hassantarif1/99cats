@@ -58,6 +58,12 @@ class User < ApplicationRecord
     user.is_password!(password) ? user : nil
   end
 
+  def self.is_email_valid?(email)
+    unless User.find_by(:email => email).nil?
+      email
+    end
+  end
+
   private
 
   def ensure_session_token

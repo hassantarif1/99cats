@@ -109,7 +109,7 @@ div li button a {
     color: #d8000c;
     background-color: #FFBABA;
     animation-name: error-login;
-    animation-duration: 2s;
+    animation-duration: 2s infinite;
 }
 @keyframes error-login {
     0% { top: 0px; background: #FFBABA; width: 100%;}
@@ -125,4 +125,10 @@ div li button a {
     left: 0;
     bottom: 0;
     width: 100%;
+}
+a:hover {
+    color: hotpink;
+}
+a {
+    color: #65F4CD
 }

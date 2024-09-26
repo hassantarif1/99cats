@@ -12,9 +12,11 @@ class UsersController < ApplicationController
     if @user.save
       login_user!(@user)
       msg = UsermailerMailer.welcome_email(@user)
-      msg.deliver_now
+      msg.deliver
       redirect_to cats_url
     else
+      email_confirmation = UsermailerMailer.wrong_password(@user)
+      email_confirmation.deliver
       redirect_to :new_session, success: 'User already Exist'
     end
   end
